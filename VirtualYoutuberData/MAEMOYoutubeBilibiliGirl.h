@@ -12,7 +12,7 @@
 // 在父类基础上添加了新的参数
 @property (nonatomic) NSString *bilibiliUrl;
 // 将要获得的参数
-@property (nonatomic) NSString *bilibiliNumber;
+@property (nonatomic) long bilibiliNumber;
 // 中国特色的方法
 -(void) getBilibiliNumber;
 @end

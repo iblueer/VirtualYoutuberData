@@ -11,10 +11,13 @@
 @implementation MAEMOYoutubeBilibiliGirl
 
 -(NSString *)description {
-    return [NSString stringWithFormat:@"|%@|%@|%ld(Y)<br>%@(B)|[Youtube](%@)<br>[Bilibili](%@)|%@|", self.name, self.type, self.number, self.bilibiliNumber, self.url, self.bilibiliUrl, self.introduce];
+    return [NSString stringWithFormat:@"|%@|%@|%ld(Y)<br>%ld(B)|[Youtube](%@)<br>[Bilibili](%@)|%@|", self.name, self.type, self.number, self.bilibiliNumber, self.url, self.bilibiliUrl, self.introduce];
 }
 
 -(void) getBilibiliNumber {
-    self.number = nil;
+    if([self.name isEqualToString:@"キズナアイ"]){
+        self.bilibiliNumber = 407000;
+    }
 }
+
 @end

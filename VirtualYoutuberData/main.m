@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "MAEMOYoutubeGirl.h"
+#import "MAEMOYoutubeBilibiliGirl.h"
 
 int main (int argc, const char * argv[]){
     @autoreleasepool {
@@ -27,10 +28,11 @@ int main (int argc, const char * argv[]){
                            @"輝夜月",
                            @"電脳少女シロ",
                            @"藤崎由愛",
-                           @"ときのそら"];
+                           @"ときのそら",
+                           @"富士葵"];
         
         // Types数组
-        NSArray *types = @[@"3D", @"3D", @"2D", @"2D", @"3D", @"3D", @"3D", @"3D", @"3D"];
+        NSArray *types = @[@"3D", @"3D", @"2D", @"2D", @"3D", @"3D", @"3D", @"3D", @"3D", @"3D"];
         
         // URL数组
         NSArray *urls = @[@"https://www.youtube.com/channel/UC4YaOt1yT-ZeyB0OmxHgolA",
@@ -41,7 +43,8 @@ int main (int argc, const char * argv[]){
                           @"https://www.youtube.com/channel/UCQYADFw7xEJ9oZSM5ZbqyBw",
                           @"https://www.youtube.com/channel/UCLhUvJ_wO9hOvv_yYENu4fQ",
                           @"https://www.youtube.com/channel/UC_zztIHGbBz9L-ZM-Ta2O1Q",
-                          @"https://www.youtube.com/channel/UCp6993wxpyDPHUpavwDFqgg"];
+                          @"https://www.youtube.com/channel/UCp6993wxpyDPHUpavwDFqgg",
+                          @"https://www.youtube.com/channel/UC3Ruo_5doyu514PesWGvCAg"];
         
         // Introduces数组
         NSArray *introduces = @[@"世界一のバーチャールユーチューバー、登録者数百万超え、今はCM動画でお金を稼ぐ",
@@ -52,7 +55,8 @@ int main (int argc, const char * argv[]){
                                 @"うるさいwてか登録者数増えるの速すぎ",
                                 @"声が幼い、体が成熟",
                                 @"イメージが薄い、おっぱいがデカイ",
-                                @"すごく元気です"];
+                                @"すごく元気です",
+                                @"見かけは伝統の日本青年女性だそう"];
         
         /*-----------------------------------------------------------------------------------------------*/
         
@@ -60,7 +64,8 @@ int main (int argc, const char * argv[]){
         NSMutableArray *girls = [[NSMutableArray alloc] init];
         
         // 循环次数：名字的个数
-        for(int i = 0; i < names.count; i++) {
+        // 跳过Kizuna AI。
+        for(int i = 1; i < names.count; i++) {
             // 创建Girl
             MAEMOYoutubeGirl *girl = [[MAEMOYoutubeGirl alloc] init];
             [girls addObject:girl];
@@ -73,6 +78,25 @@ int main (int argc, const char * argv[]){
             
             // 调用getNumberFromNet函数
             [girl getNumberFromNet];
+            
+            // 对象初始化完成
+        }
+        
+        // 创建Kizuna AI
+        {
+            MAEMOYoutubeBilibiliGirl *kai = [[MAEMOYoutubeBilibiliGirl alloc] init];
+            [girls addObject:kai];
+            
+            // 向Girl赋值
+            kai.name = names[0];
+            kai.type = types[0];
+            kai.url = urls[0];
+            kai.introduce = introduces[0];
+            kai.bilibiliUrl = @"https://space.bilibili.com/1473830/";
+            
+            // 调用getNumberFromNet函数
+            [kai getNumberFromNet];
+            [kai getBilibiliNumber];
             
             // 对象初始化完成
         }

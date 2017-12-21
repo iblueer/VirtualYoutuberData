@@ -64,10 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				2F827F1E1FE9C1A00015CD78 /* main.m */,
-				2F827F261FE9C1BF0015CD78 /* MAEMOYoutubeBilibiliGirl.h */,
-				2F827F251FE9C1BF0015CD78 /* MAEMOYoutubeBilibiliGirl.m */,
 				2F827F271FE9C1BF0015CD78 /* MAEMOYoutubeGirl.h */,
 				2F827F281FE9C1BF0015CD78 /* MAEMOYoutubeGirl.m */,
+				2F827F261FE9C1BF0015CD78 /* MAEMOYoutubeBilibiliGirl.h */,
+				2F827F251FE9C1BF0015CD78 /* MAEMOYoutubeBilibiliGirl.m */,
 			);
 			path = VirtualYoutuberData;
 			sourceTree = "<group>";

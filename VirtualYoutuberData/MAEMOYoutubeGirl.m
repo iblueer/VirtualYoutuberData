@@ -89,8 +89,4 @@
     self.number = [trimmedString integerValue];
 //    NSLog(@"%ld", self.number);
 }
-
--(NSString *) getBilibiliNumber:(NSString *)bilibiliURL {
-    return 0;
-}
 @end
