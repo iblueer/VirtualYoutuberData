@@ -21,42 +21,64 @@ int main (int argc, const char * argv[]){
         /*-----------------------------------------------------------------------------------------------*/
         // Names数组
         NSArray *names = @[@"キズナアイ",
+                           @"輝夜月",
                            @"ミライアカリ",
                            @"萌実",
                            @"エイレーン",
                            @"のじゃロリ狐娘",
-                           @"輝夜月",
                            @"電脳少女シロ",
                            @"藤崎由愛",
                            @"ときのそら",
-                           @"富士葵"];
+                           @"富士葵",
+                           @"バララとカレン",
+                           @"ばあちゃる",
+                           @"環と杏",
+                           @"虎妮",
+                           @"エゼ",
+                           @"さはな"];
         
         // Types数组
-        NSArray *types = @[@"3D", @"3D", @"2D", @"2D", @"3D", @"3D", @"3D", @"3D", @"3D", @"3D"];
+        NSArray *types = @[@"3D", @"3D", @"3D", @"2D", @"2D", @"3D", @"3D", @"3D", @"3D", @"3D", @"3D", @"3D", @"3D", @"3D", @"3D(2D)", @"2D"];
         
         // URL数组
         NSArray *urls = @[@"https://www.youtube.com/channel/UC4YaOt1yT-ZeyB0OmxHgolA",
+                          @"https://www.youtube.com/channel/UCQYADFw7xEJ9oZSM5ZbqyBw",
                           @"https://www.youtube.com/user/bittranslate/featured",
                           @"https://www.youtube.com/channel/UCy5lOmEQoivK5XK7QCaRKug",
                           @"https://www.youtube.com/user/TheOtakuMoe",
                           @"https://www.youtube.com/channel/UCt8tmsv8kL9Nc1sxvCo9j4Q",
-                          @"https://www.youtube.com/channel/UCQYADFw7xEJ9oZSM5ZbqyBw",
                           @"https://www.youtube.com/channel/UCLhUvJ_wO9hOvv_yYENu4fQ",
                           @"https://www.youtube.com/channel/UC_zztIHGbBz9L-ZM-Ta2O1Q",
                           @"https://www.youtube.com/channel/UCp6993wxpyDPHUpavwDFqgg",
-                          @"https://www.youtube.com/channel/UC3Ruo_5doyu514PesWGvCAg"];
+                          @"https://www.youtube.com/channel/UC3Ruo_5doyu514PesWGvCAg",
+                          @"https://www.youtube.com/channel/UCpAcI-1ZUZVBNXzAd7pTMAA",
+                          @"https://www.youtube.com/channel/UC6TyfKcsrPwBsBnx2QobVLQ",
+                          @"https://www.youtube.com/channel/UCFI81W9F49a7GvimKF905eQ",
+                          @"https://www.youtube.com/channel/UC6s0wLR0TZauzTVoGGw2r6g",
+                          @"https://www.youtube.com/channel/UCf6s3Ri5h6b8fX2VDU0q8wg",
+                          @"https://www.youtube.com/channel/UCynHwUYnx8V0NJ9_pU-aAsA"];
+        
+        // Bilibili数组
+        NSArray *burls = @[@"https://space.bilibili.com/1473830/",
+                           @"https://space.bilibili.com/265224956/"];
         
         // Introduces数组
-        NSArray *introduces = @[@"世界一のバーチャールユーチューバー、登録者数百万超え、今はCM動画でお金を稼ぐ",
+        NSArray *introduces = @[@"登録者数百万超え、CM動画でお金を稼ぐ、世界一のバーチャールユーチューバー",
+                                @"うるさいwてか登録者数増えるの速すぎ",
                                 @"新しい企画、エイレーンの後輩、見た目はヨーロッパ人",
                                 @"自称「あなたの嫁」だって？私まだ独身だけど",
                                 @"西洋向け見たい、画風的には気に入らない",
                                 @"こいつって、実おっさんだ",
-                                @"うるさいwてか登録者数増えるの速すぎ",
                                 @"声が幼い、体が成熟",
                                 @"イメージが薄い、おっぱいがデカイ",
                                 @"すごく元気です",
-                                @"見かけは伝統の日本青年女性だそう"];
+                                @"見かけは伝統の日本青年女性だそう",
+                                @"姉妹ふたりで活動している",
+                                @"うま？馬じゃない？いやうまですねこれ！",
+                                @"新聞放送室で活動？草",
+                                @"啊咧？台灣出身的虛擬UP主誒，卡哇伊",
+                                @"ただの紙切りユーチューバーじゃん",
+                                @"うわーこの絵ちょうダメだねw"];
         
         /*-----------------------------------------------------------------------------------------------*/
         
@@ -64,8 +86,31 @@ int main (int argc, const char * argv[]){
         NSMutableArray *girls = [[NSMutableArray alloc] init];
         
         // 循环次数：名字的个数
+        
+        // 添加Kizuna AI和辉夜月
+        for (int i = 0; i < 2; i++) {
+            MAEMOYoutubeBilibiliGirl *bgirl = [[MAEMOYoutubeBilibiliGirl alloc] init];
+            [girls addObject:bgirl];
+            
+            // 向Girl赋值
+            bgirl.name = names[i];
+            bgirl.type = types[i];
+            bgirl.url = urls[i];
+            bgirl.introduce = introduces[i];
+            bgirl.bilibiliUrl = burls[0];
+            
+            // 调用getNumberFromNet方法
+            [bgirl getNumberFromNet];
+            
+            // 调用getBilibiliNumber方法
+            [bgirl getBilibiliNumber];
+            
+            // 对象初始化完成
+        }
+
         // 跳过Kizuna AI。
-        for(int i = 1; i < names.count; i++) {
+        // 跳过辉夜月。
+        for (int i = 2; i < names.count; i++) {
             // 创建Girl
             MAEMOYoutubeGirl *girl = [[MAEMOYoutubeGirl alloc] init];
             [girls addObject:girl];
@@ -78,25 +123,6 @@ int main (int argc, const char * argv[]){
             
             // 调用getNumberFromNet函数
             [girl getNumberFromNet];
-            
-            // 对象初始化完成
-        }
-        
-        // 创建Kizuna AI
-        {
-            MAEMOYoutubeBilibiliGirl *kai = [[MAEMOYoutubeBilibiliGirl alloc] init];
-            [girls addObject:kai];
-            
-            // 向Girl赋值
-            kai.name = names[0];
-            kai.type = types[0];
-            kai.url = urls[0];
-            kai.introduce = introduces[0];
-            kai.bilibiliUrl = @"https://space.bilibili.com/1473830/";
-            
-            // 调用getNumberFromNet函数
-            [kai getNumberFromNet];
-            [kai getBilibiliNumber];
             
             // 对象初始化完成
         }

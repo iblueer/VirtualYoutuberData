@@ -17,6 +17,8 @@
 -(void) getBilibiliNumber {
     if([self.name isEqualToString:@"キズナアイ"]){
         self.bilibiliNumber = 407000;
+    } else if ([self.name isEqualToString:@"輝夜月"]) {
+        self.bilibiliNumber = 5920;
     }
 }
 

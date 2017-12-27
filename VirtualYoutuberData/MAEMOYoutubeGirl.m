@@ -20,13 +20,24 @@
         NSLog(@"Error: No URL");
     }
     // 从网上获取html文件
+    NSError *error;
     NSURL *remoteTextFileURL = [NSURL URLWithString:self.url];
     NSData *remoteTextFileData = [NSData dataWithContentsOfURL:remoteTextFileURL];
-    [remoteTextFileData writeToFile:@"/Users/Shared/VirtualYoutuberData/YoutubeGirl.html" atomically:YES];
-    
+    if (!remoteTextFileData) {
+        NSLog(@"get remote data failed. error: %@", [error localizedDescription]);
+    }
+    // 写入文件
+    NSString *target = @"/Users/Shared/VirtualYoutuberData/YoutubeGirl.html";
+    BOOL written =[remoteTextFileData writeToFile:target atomically:YES];
+    if (!written) {
+        NSLog(@"write to file failed.");
+    }
     //*************直接从文件中读取字符串***************
     //创建一个用来接受文件中字符串信息的字符串
-    NSString *strHTML=[NSString stringWithContentsOfFile:@"/Users/Shared/VirtualYoutuberData/YoutubeGirl.html" encoding:NSUTF8StringEncoding error:nil];
+    NSString *strHTML=[NSString stringWithContentsOfFile:@"/Users/Shared/VirtualYoutuberData/YoutubeGirl.html" encoding:NSUTF8StringEncoding error:&error];
+    if (!strHTML) {
+        NSLog(@"read from file failed. error: %@", [error localizedDescription]);
+    }
     // 正序查找
     // 查找 一小段字符串 在 字符串str2 中的位置（并输出 子字符串 在 str2 中的位置及其长度）
     // 注：这里其实就是寻找一个  字符串  的  子字符串
