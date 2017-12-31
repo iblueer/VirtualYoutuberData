@@ -21,8 +21,8 @@ int main (int argc, const char * argv[]){
         /*-----------------------------------------------------------------------------------------------*/
         // Names数组
         NSArray *names = @[@"キズナアイ",
-                           @"輝夜月",
                            @"ミライアカリ",
+                           @"輝夜月",
                            @"萌実",
                            @"エイレーン",
                            @"のじゃロリ狐娘",
@@ -42,8 +42,8 @@ int main (int argc, const char * argv[]){
         
         // URL数组
         NSArray *urls = @[@"https://www.youtube.com/channel/UC4YaOt1yT-ZeyB0OmxHgolA",
-                          @"https://www.youtube.com/channel/UCQYADFw7xEJ9oZSM5ZbqyBw",
                           @"https://www.youtube.com/user/bittranslate/featured",
+                          @"https://www.youtube.com/channel/UCQYADFw7xEJ9oZSM5ZbqyBw",
                           @"https://www.youtube.com/channel/UCy5lOmEQoivK5XK7QCaRKug",
                           @"https://www.youtube.com/user/TheOtakuMoe",
                           @"https://www.youtube.com/channel/UCt8tmsv8kL9Nc1sxvCo9j4Q",
@@ -60,6 +60,7 @@ int main (int argc, const char * argv[]){
         
         // Bilibili数组
         NSArray *burls = @[@"https://space.bilibili.com/1473830/",
+                           @"https://space.bilibili.com/54081/",
                            @"https://space.bilibili.com/265224956/"];
         
         // Introduces数组
@@ -88,7 +89,7 @@ int main (int argc, const char * argv[]){
         // 循环次数：名字的个数
         
         // 添加Kizuna AI和辉夜月
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 3; i++) {
             MAEMOYoutubeBilibiliGirl *bgirl = [[MAEMOYoutubeBilibiliGirl alloc] init];
             [girls addObject:bgirl];
             
@@ -109,8 +110,9 @@ int main (int argc, const char * argv[]){
         }
 
         // 跳过Kizuna AI。
+        // 跳过未来灯里。
         // 跳过辉夜月。
-        for (int i = 2; i < names.count; i++) {
+        for (int i = 3; i < names.count; i++) {
             // 创建Girl
             MAEMOYoutubeGirl *girl = [[MAEMOYoutubeGirl alloc] init];
             [girls addObject:girl];
