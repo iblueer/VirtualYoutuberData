@@ -97,7 +97,7 @@ int main (int argc, const char * argv[]){
             bgirl.type = types[i];
             bgirl.url = urls[i];
             bgirl.introduce = introduces[i];
-            bgirl.bilibiliUrl = burls[0];
+            bgirl.bilibiliUrl = burls[i];
             
             // 调用getNumberFromNet方法
             [bgirl getNumberFromNet];
