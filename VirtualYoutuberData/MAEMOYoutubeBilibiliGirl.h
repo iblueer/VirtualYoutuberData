@@ -11,8 +11,9 @@
 @interface MAEMOYoutubeBilibiliGirl : MAEMOYoutubeGirl
 // 在父类基础上添加了新的参数
 @property (nonatomic) NSString *bilibiliID;
+@property (nonatomic) NSString *bilibiliURL;
 // 将要获得的参数
 @property (nonatomic) long bilibiliNumber;
 // 中国特色的方法
--(void) getBilibiliNumber;
+-(void) getBilibiliNumberFromNet;
 @end

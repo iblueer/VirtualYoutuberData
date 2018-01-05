@@ -11,10 +11,10 @@
 @implementation MAEMOYoutubeBilibiliGirl
 
 -(NSString *)description {
-    return [NSString stringWithFormat:@"|%@|%@|%ld(Y)<br>%ld(B)|[Youtube](%@)<br>[Bilibili](%@)|%@|", self.name, self.type, self.number, self.bilibiliNumber, self.url, self.bilibiliID, self.introduce];
+    return [NSString stringWithFormat:@"|%@|%@|%ld(Y)<br>%ld(B)|[Youtube](%@)<br>[Bilibili](%@)|%@|", self.name, self.type, self.number, self.bilibiliNumber, self.url, self.bilibiliURL, self.introduce];
 }
 
--(void) getBilibiliNumber {
+-(void) getBilibiliNumberFromNet {
     // 先判断有没有参数？
     if(!self.bilibiliID) {
         NSLog(@"Error: No bilibiliID");

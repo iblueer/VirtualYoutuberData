@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F03079F1FFF74B900FDFA87 /* MAEMOBilibiliGirl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F03079E1FFF74B900FDFA87 /* MAEMOBilibiliGirl.m */; };
 		2F827F1F1FE9C1A00015CD78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F827F1E1FE9C1A00015CD78 /* main.m */; };
 		2F827F291FE9C1BF0015CD78 /* MAEMOYoutubeBilibiliGirl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F827F251FE9C1BF0015CD78 /* MAEMOYoutubeBilibiliGirl.m */; };
 		2F827F2A1FE9C1BF0015CD78 /* MAEMOYoutubeGirl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F827F281FE9C1BF0015CD78 /* MAEMOYoutubeGirl.m */; };
@@ -25,6 +26,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2F03079D1FFF74B900FDFA87 /* MAEMOBilibiliGirl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAEMOBilibiliGirl.h; sourceTree = "<group>"; };
+		2F03079E1FFF74B900FDFA87 /* MAEMOBilibiliGirl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAEMOBilibiliGirl.m; sourceTree = "<group>"; };
 		2F827F1B1FE9C1A00015CD78 /* VirtualYoutuberData */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = VirtualYoutuberData; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F827F1E1FE9C1A00015CD78 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2F827F251FE9C1BF0015CD78 /* MAEMOYoutubeBilibiliGirl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAEMOYoutubeBilibiliGirl.m; sourceTree = "<group>"; };
@@ -68,6 +71,8 @@
 				2F827F281FE9C1BF0015CD78 /* MAEMOYoutubeGirl.m */,
 				2F827F261FE9C1BF0015CD78 /* MAEMOYoutubeBilibiliGirl.h */,
 				2F827F251FE9C1BF0015CD78 /* MAEMOYoutubeBilibiliGirl.m */,
+				2F03079D1FFF74B900FDFA87 /* MAEMOBilibiliGirl.h */,
+				2F03079E1FFF74B900FDFA87 /* MAEMOBilibiliGirl.m */,
 			);
 			path = VirtualYoutuberData;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 				2F827F2A1FE9C1BF0015CD78 /* MAEMOYoutubeGirl.m in Sources */,
 				2F827F1F1FE9C1A00015CD78 /* main.m in Sources */,
 				2F827F291FE9C1BF0015CD78 /* MAEMOYoutubeBilibiliGirl.m in Sources */,
+				2F03079F1FFF74B900FDFA87 /* MAEMOBilibiliGirl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
