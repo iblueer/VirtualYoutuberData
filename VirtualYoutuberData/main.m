@@ -59,9 +59,9 @@ int main (int argc, const char * argv[]){
                           @"https://www.youtube.com/channel/UCynHwUYnx8V0NJ9_pU-aAsA"];
         
         // Bilibili数组
-        NSArray *burls = @[@"https://space.bilibili.com/1473830/",
-                           @"https://space.bilibili.com/54081/",
-                           @"https://space.bilibili.com/265224956/"];
+        NSArray *bid = @[@"1473830",
+                           @"54081",
+                           @"265224956"];
         
         // Introduces数组
         NSArray *introduces = @[@"登録者数百万超え、CM動画でお金を稼ぐ、世界一のバーチャールユーチューバー",
@@ -98,7 +98,7 @@ int main (int argc, const char * argv[]){
             bgirl.type = types[i];
             bgirl.url = urls[i];
             bgirl.introduce = introduces[i];
-            bgirl.bilibiliUrl = burls[i];
+            bgirl.bilibiliID = bid[i];
             
             // 调用getNumberFromNet方法
             [bgirl getNumberFromNet];
@@ -163,8 +163,9 @@ int main (int argc, const char * argv[]){
         // 以data的文件内容创建result.md
         NSLog(@"已成功导出Markdown文本文件到/Users/Shared/VirtualYoutuberData/目录下");
         
-        // 删除文件YoutubeGirl.html
+        // 删除文件
         [fm removeItemAtPath:@"/Users/Shared/VirtualYoutuberData/YoutubeGirl.html" error:nil];
+        [fm removeItemAtPath:@"/Users/Shared/VirtualYoutuberData/BilibiliGirl.html" error:nil];
         
     }
     return 0;

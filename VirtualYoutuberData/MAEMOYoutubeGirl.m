@@ -26,7 +26,7 @@
     if (!remoteTextFileData) {
         NSLog(@"get remote data failed. error: %@", [error localizedDescription]);
     }
-    // 写入文件
+    // 写入文件（这一步可以跳过）
     NSString *target = @"/Users/Shared/VirtualYoutuberData/YoutubeGirl.html";
     BOOL written =[remoteTextFileData writeToFile:target atomically:YES];
     if (!written) {
@@ -39,7 +39,7 @@
         NSLog(@"read from file failed. error: %@", [error localizedDescription]);
     }
     // 正序查找
-    // 查找 一小段字符串 在 字符串str2 中的位置（并输出 子字符串 在 str2 中的位置及其长度）
+    // 查找 一小段字符串 在 字符串strHTML 中的位置（并输出 子字符串 在 strHTML 中的位置及其长度）
     // 注：这里其实就是寻找一个  字符串  的  子字符串
     NSString *keywordBegin = @"aria-label=\"チャンネル登録者数 ";
     NSString *keywordEnd = @" 人\">";
@@ -55,7 +55,7 @@
     //            NSUInteger length;
     //        } NSRange;
     
-    //        显然这是一个枚举类型，返回值是 该子字符串  在 字符串str2 中的 位置 和 自身长度
+    //        显然这是一个枚举类型，返回值是 该子字符串  在 字符串strHTML 中的 位置 和 自身长度
     
     // rangeOfString 作用是查找子字符串itcast在 str中第一次出现的位置
     // 如果找能够查找到字符串，则返回子字符串的位置信息
