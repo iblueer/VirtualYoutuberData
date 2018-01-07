@@ -50,14 +50,14 @@
     NSUInteger start = 0;
     NSUInteger end = 0;
     if ((tourokusyasuu.location!=NSNotFound)&&(nin.location!=NSNotFound)&&(tourokusyasuu.location < nin.location)) {//这里其实就是如果 子字符串 在 该字符串 中的位置不是无限大，那么肯定就对了，如果无限大，肯定就跑到外面去了，就找不到了～
-        NSLog(@"%@ 查找成功", self.name);
+        NSLog(@"%@ Bilibili查找成功", self.name);
         start = tourokusyasuu.location + tourokusyasuu.length;
         end = nin.location;
         //NSLog(@"start = %u, end = %u", start, end);
     }
     else
     {
-        NSLog(@"字符串匹配失败!");
+        NSLog(@"%@ Bilibili查找失败", self.name);
     }
     // 然后既然已经知道子串的起止位置了，就要拿到那个关键数据了。
     // 将子字符串的位置保存为一个NSRange类型

@@ -144,6 +144,10 @@ int main (int argc, const char * argv[]){
             // 调用getNumberFromNet函数
             [girl getNumberFromNet];
             
+            // 如果粉丝数为0，则直接从表中移除。
+            if (girl.number == 0) {
+                [girls removeObject:girl];
+            }
         }
         
         /*-----------------------------------------------------------------------------------------------*/
