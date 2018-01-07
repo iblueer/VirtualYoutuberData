@@ -16,7 +16,7 @@ int main (int argc, const char * argv[]){
         // 创建文件管理器
         NSFileManager *fm = [NSFileManager defaultManager];
         // 创建需要的目录
-        [fm createDirectoryAtPath:@"/Users/Shared/VirtualYoutuberData" withIntermediateDirectories:YES attributes:nil error:nil];
+        [fm createDirectoryAtPath:@"/tmp/VirtualYoutuberData" withIntermediateDirectories:YES attributes:nil error:nil];
         
         
         /*-----------------------------------------------------------------------------------------------*/
@@ -249,14 +249,14 @@ int main (int argc, const char * argv[]){
         NSData *bdata = [bresult dataUsingEncoding:NSUTF8StringEncoding];
         
         // 以data的文件内容创建result.md
-        [fm createFileAtPath:@"/Users/Shared/VirtualYoutuberData/result.md" contents:data attributes:nil];
-        [fm createFileAtPath:@"/Users/Shared/VirtualYoutuberData/bresult.md" contents:bdata attributes:nil];
+        [fm createFileAtPath:@"/tmp/VirtualYoutuberData/result.md" contents:data attributes:nil];
+        [fm createFileAtPath:@"/tmp/VirtualYoutuberData/bresult.md" contents:bdata attributes:nil];
         
-        NSLog(@"已成功导出Markdown文本文件到/Users/Shared/VirtualYoutuberData/目录下");
+        NSLog(@"已成功导出Markdown文本文件到/tmp/VirtualYoutuberData/目录下");
         
         // 删除文件
-        [fm removeItemAtPath:@"/Users/Shared/VirtualYoutuberData/YoutubeGirl.html" error:nil];
-        [fm removeItemAtPath:@"/Users/Shared/VirtualYoutuberData/BilibiliGirl.html" error:nil];
+        [fm removeItemAtPath:@"/tmp/VirtualYoutuberData/YoutubeGirl.html" error:nil];
+        [fm removeItemAtPath:@"/tmp/VirtualYoutuberData/BilibiliGirl.html" error:nil];
         
     }
     return 0;

@@ -29,13 +29,13 @@
         NSLog(@"get remote data failed. error: %@", [error localizedDescription]);
     }
     // 将数据写入本地文件
-    NSString *target = @"/Users/Shared/VirtualYoutuberData/BilibiliGirl.html";
+    NSString *target = @"/tmp/VirtualYoutuberData/BilibiliGirl.html";
     BOOL written =[remoteTextFileData writeToFile:target atomically:YES];
     if (!written) {
         NSLog(@"write to file failed.");
     }
     //创建一个用来接受文件中字符串信息的字符串
-    NSString *strHTML=[NSString stringWithContentsOfFile:@"/Users/Shared/VirtualYoutuberData/BilibiliGirl.html" encoding:NSUTF8StringEncoding error:&error];
+    NSString *strHTML=[NSString stringWithContentsOfFile:@"/tmp/VirtualYoutuberData/BilibiliGirl.html" encoding:NSUTF8StringEncoding error:&error];
     if (!strHTML) {
         NSLog(@"read from file failed. error: %@", [error localizedDescription]);
     }
